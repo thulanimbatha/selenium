@@ -9,10 +9,24 @@ from selenium.webdriver.chrome.service import Service
 service = Service("C:\Development\chromedriver.exe")
 driver = webdriver.Chrome(service=service)
 
-driver.get("https://takealot.com/12-rules-for-life/PLID55066610")
-price = driver.find_element(by=By.CLASS_NAME, value="currency.plus.currency-module_currency_29IIm")
+# by Class Name
+# driver.get("https://takealot.com/12-rules-for-life/PLID55066610")
+# price = driver.find_element(by=By.CLASS_NAME, value="currency.plus.currency-module_currency_29IIm")
 
-print(price.text)
+# print(price.text)
+
+driver.get("https://python.org")
+# by Name
+# search_bar = driver.find_element(by=By.NAME, value="q")
+# print(search_bar.get_attribute("placeholder")) 
+
+# by CSS selector
+# docs_link = driver.find_element(by=By.CSS_SELECTOR, value=".documentation-widget a") # anchor tag inside doc-widget class
+# print(docs_link.text) 
+
+# by Xpath
+# link = driver.find_element(by=By.XPATH, value='//*[@id="content"]/div/section/div[2]/div[2]/p[2]/a')
+# print(link.text)
 
 # driver.close()  # closes tab
 driver.quit()   # closes browser
