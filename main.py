@@ -28,5 +28,13 @@ driver.get("https://python.org")
 # link = driver.find_element(by=By.XPATH, value='//*[@id="content"]/div/section/div[2]/div[2]/p[2]/a')
 # print(link.text)
 
+# find upcoming events and store them into a dictionary
+event_times = driver.find_elements(by=By.CSS_SELECTOR, value=".event-widget time")
+for time in event_times:
+    print(time.text)
+
+
+    
+
 # driver.close()  # closes tab
 driver.quit()   # closes browser
