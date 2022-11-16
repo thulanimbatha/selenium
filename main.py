@@ -30,8 +30,10 @@ driver.get("https://python.org")
 
 # find upcoming events and store them into a dictionary
 event_times = driver.find_elements(by=By.CSS_SELECTOR, value=".event-widget time")
-for time in event_times:
-    print(time.text)
+event_names = driver.find_elements(by=By.CSS_SELECTOR, value=".event-widget a")
+
+for name in event_names:
+    print(name.text)
 
 
     
