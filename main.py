@@ -1,3 +1,4 @@
+from pprint import pprint
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
@@ -31,9 +32,13 @@ driver.get("https://python.org")
 # find upcoming events and store them into a dictionary
 event_times = driver.find_elements(by=By.CSS_SELECTOR, value=".event-widget time")
 event_names = driver.find_elements(by=By.CSS_SELECTOR, value=".event-widget li a")
-
-for name in event_names:
-    print(name.text)
+events = {}
+for n in range(len(event_times)):
+    events[n] = {
+        "time"  : event_times[n].text,
+        "name"  : event_names[n].text
+    }
+print(events)
 
 
     
